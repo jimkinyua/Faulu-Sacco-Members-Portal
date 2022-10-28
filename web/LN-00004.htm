@@ -1,0 +1,1023 @@
+
+<!DOCTYPE html>
+<html lang="en-US" class="h-100">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+    <meta name="title" content="Faulu SACCO Members Portal">
+    <meta name="author" content="Iansoft Technologies">
+    <meta name="description" content="Faulu Members Portal for Self Service Portal">
+    <meta name="keywords" content="SACCO, Faulu Members, Faulu Login, Faulu Kenya, Faulu Kenya" />
+    <!-- <link rel="canonical" href="https://themes.getbootstrap.com/product/rocket/"> -->
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="120x120" href=" /html&css/assets/img/SaccoLogo.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="  /html&css/assets/img/SaccoLogo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href=" /html&css/assets/img/SaccoLogo.png">
+    <link rel="manifest" href=" /html&css/assets/img/favicon/site.webmanifest">
+    <link rel="mask-icon" href=" /html&css/assets/img/favicon/safari-pinned-tab.svg" color="#ffffff">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i%7CQuicksand:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/fonts/material-icons/material-icons.css">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+
+        <title>Member Dashboard</title>
+    <meta name="csrf-param" content="_csrf">
+<meta name="csrf-token" content="_7agH9_nzYN_ciM0_wsLRh9uDhEmoklwGorzwlrInwG3-dRFmYybxQYic3uQRWQzZR9XS0PbLRRtvaL2a4bmbg==">
+
+<link href="/app-assets/vendors/css/vendors.min.css" rel="stylesheet">
+<link href="/app-assets/vendors/css/ui/jquery-ui.min.css" rel="stylesheet">
+<link href="/app-assets/css-rtl/plugins/ui/jqueryui.css" rel="stylesheet">
+<link href="/app-assets/vendors/css/material-vendors.min.css" rel="stylesheet">
+<link href="/app-assets/vendors/css/weather-icons/climacons.min.css" rel="stylesheet">
+<link href="/app-assets/fonts/meteocons/style.css" rel="stylesheet">
+<link href="/app-assets/vendors/css/charts/morris.css" rel="stylesheet">
+<link href="/app-assets/vendors/css/charts/chartist.css" rel="stylesheet">
+<link href="/app-assets/vendors/css/charts/chartist-plugin-tooltip.css" rel="stylesheet">
+<link href="/app-assets/vendors/css/tables/datatable/datatables.min.css" rel="stylesheet">
+<link href="/app-assets/vendors/css/tables/extensions/responsive.dataTables.min.css" rel="stylesheet">
+<link href="/app-assets/vendors/css/tables/extensions/colReorder.dataTables.min.css" rel="stylesheet">
+<link href="/app-assets/vendors/css/tables/extensions/buttons.dataTables.min.css" rel="stylesheet">
+<link href="/app-assets/vendors/css/tables/datatable/buttons.bootstrap4.min.css" rel="stylesheet">
+<link href="/app-assets/vendors/css/tables/extensions/fixedHeader.dataTables.min.css" rel="stylesheet">
+<link href="/app-assets/css/material.css" rel="stylesheet">
+<link href="/app-assets/css/components.css" rel="stylesheet">
+<link href="/app-assets/css/bootstrap-extended.css" rel="stylesheet">
+<link href="/app-assets/css/material-extended.css" rel="stylesheet">
+<link href="/app-assets/css/material-colors.css" rel="stylesheet">
+<link href="/app-assets/css-rtl/colors.css" rel="stylesheet">
+<link href="/app-assets/css/core/menu/menu-types/vertical-menu.css" rel="stylesheet">
+<link href="/app-assets/css/core/colors/palette-gradient.css" rel="stylesheet">
+<link href="/app-assets/vendors/css/charts/jquery-jvectormap-2.0.3.css" rel="stylesheet">
+<link href="/app-assets/fonts/simple-line-icons/style.css" rel="stylesheet">
+<link href="/app-assets/css/plugins/images/cropper/cropper.css" rel="stylesheet"></head>
+
+<body class="vertical-layout vertical-menu 2-columns   fixed-navbar" data-open="click" data-menu="vertical-menu" data-col="2-columns">
+    <!-- Global Modal Here -->
+    <div class="modal fade bs-example-modal-lg bs-modal-lg" tabindex="-1" role="dialog" aria-hidden="true" id="modal">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content" id="modalContent">
+
+                <div class="modal-header" id="modalHeader">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel" style="position: absolute"></h4>
+                </div>
+
+                <div class="modal-body">
+                    <img class="loader-element ButtonPreloader" src="/html&css/assets/img/brand/preloader-spinner.gif" height="50" alt="Faulu logo">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    <!--<button type="button" class="btn btn-primary">Save changes</button>-->
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- BEGIN: Header-->
+    <nav class="header-navbar navbar-expand-md navbar navbar-with-menu navbar-without-dd-arrow fixed-top navbar-semi-light bg-info navbar-shadow">
+        <div class="navbar-wrapper">
+            <div class="navbar-header">
+                <ul class="nav navbar-nav flex-row">
+                    <li class="nav-item mobile-menu d-md-none mr-auto"><a class="nav-link nav-menu-main menu-toggle hidden-xs" href="#"><i class="ft-menu font-large-5"></i></a></li>
+                    <li class="nav-item"><a class="navbar-brand" href="/">
+                            <img class="brand-logo" alt="modern admin logo" src="../../../app-assets/images/logo/logo.png" style="
+                            width: 9.5em; 
+                            position:fixed;
+                            margin-top:.5em;
+                            height: 4em;
+                            ">
+                            <!-- <h3 class="brand-text">Faulu SACCO</h3> -->
+                        </a></li>
+                    <li class="nav-item d-md-none"><a class="nav-link open-navbar-container" data-toggle="collapse" data-target="#navbar-mobile"><i class="la la-ellipsis-v"></i></a></li>
+                </ul>
+            </div>
+            <div class="navbar-container content">
+                <div class="collapse navbar-collapse" id="navbar-mobile">
+                    <ul class="nav navbar-nav mr-auto float-left">
+                        <li class="nav-item d-none d-md-block"><a class="nav-link nav-menu-main menu-toggle hidden-xs" href="#"><i class="ft-menu"></i></a></li>
+                        <li class="nav-item d-none d-lg-block"><a class="nav-link nav-link-expand" href="#"><i class="ficon ft-maximize"></i></a></li>
+                    </ul>
+                    <ul class="nav navbar-nav float-right">
+                        <li class="dropdown dropdown-user nav-item"><a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown"><span class="mr-1 user-name text-bold-700">   </span><span class="avatar avatar-online"><img style="height:inherit;width:150px;" src=" data:image/png;base64, " alt="no image found"><i></i></span></a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="/member-change-request/edit-profile"><i class="ft-edit"></i> Edit My Details </a>
+                                <a class="dropdown-item" href="/site/change-password"><i class="ft-edit"></i> Change Password </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="/site/logout"><i class="ft-power"></i> Logout</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- END: Header-->
+
+
+    <!-- BEGIN: Main Menu-->
+
+    <div class="main-menu menu-fixed menu-dark menu-accordion text-white     menu-shadow " data-scroll-to-active="true">
+        <div class="main-menu-content ">
+            <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
+                <li class=" nav-item"><a href="/"><i class="la la-home"></i><span class="menu-title" data-i18n="Dashboard">Dashboard</span><span class="badge badge badge-info badge-pill float-right mr-2"></span></a>
+                </li>
+
+
+                <li class="nav-item"><a href="#"><i class="la la-clipboard"></i><span class="menu-title" data-i18n="Menu levels">Reports </span></a>
+                    <ul class="menu-content">
+                        <li><a class="menu-item" href="http://localhost:8060/site/statement/"><i></i><span data-i18n="Second level">Full Statement</span></a>
+                        </li>
+                        <li><a class="menu-item" href="http://localhost:8060/site/guaranteed-loans-statements/"><i></i><span data-i18n="Second level">Guaranteed Loans Statement</span></a>
+                        </li>
+                        <li><a class="menu-item" href="http://localhost:8060/site/guarantor-statement/"><i></i><span data-i18n="Second level">Guarantor Statement</span></a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class=" navigation-header"><span>General </span><i class="la la-ellipsis-h" data-toggle="tooltip" data-placement="right" data-original-title="General"></i>
+                </li>
+
+
+                <li class="nav-item"><a href="#"><i class="la la-money"></i><span class="menu-title" data-i18n="Menu levels">Loan Management</span></a>
+                    <ul class="menu-content">
+                        <li><a class="menu-item" href="http://localhost:8060/loan"><i></i><span data-i18n="Second level">Loan Applications</span></a>
+                        </li>
+
+                        <li><a class="menu-item" href="http://localhost:8060/loan/pending-approval"><i></i><span data-i18n="Second level"> Submitted Loans </span></a>
+                        </li>
+                        <li><a class="menu-item" href="http://localhost:8060/loan/approved"><i></i><span data-i18n="Second level">Disbursed Loans </span></a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class=" nav-item"><a href="http://localhost:8060/loan-calculator/"><i class="la la-calculator"></i><span class="menu-title" data-i18n="Raise Support">Loan Calculator</span></a>
+
+
+                <li><a class="menu-item" href="#"><i class="la la-group"></i><span data-i18n="Second level child">Guarantor Management</span></a>
+                    <ul class="menu-content">
+                        <li><a class="menu-item" href="http://localhost:8060/guarantors/guarantorship-requests/"><i class="la la-key"></i>
+                                <span data-i18n="Third level">Guarantorship Requests</span></a>
+                        </li>
+                    </ul>
+                </li>
+
+             
+
+                <!-- <li><a class="menu-item" href="#"><i class="la la-book"></i><span data-i18n="Second level child">Cheque Book Mgt</span></a>
+                <ul class="menu-content">
+                    <li><a class="menu-item" href="http://localhost:8060/cheque-book-request/"><i class="la la-pen"></i>
+                            <span data-i18n="Third level"> Applications</span></a>
+                    </li>
+                </ul>
+            </li> -->
+
+                <li><a class="menu-item" href="#"><i class="la la-edit"></i><span data-i18n="Second level child"> Change Request </span></a>
+                    <ul class="menu-content">
+                        <li><a class="menu-item" href="http://localhost:8060/member-change-request/"><i class="la la-pen"></i>
+                                <span data-i18n="Third level"> Applications</span></a>
+                        </li>
+                    </ul>
+                </li>
+
+            
+
+                <!-- <li><a class="menu-item" href="#"><i class="la la-book"></i><span data-i18n="Second level child">Membership Management</span></a>
+                    <ul class="menu-content">
+                        <li><a class="menu-item" href="http://localhost:8060/member-withdrawal/create"><i class="la la-door-open"></i>
+                                <span data-i18n="Third level"> Exit Sacco</span></a>
+                        </li>
+
+                        <li><a class="menu-item" href="http://localhost:8060/inter-account/create"><i class="la la-share"></i>
+                            <span data-i18n="Third level"> Transfer Shares </span></a>
+                    </li>
+
+                    </ul>
+                </li> -->
+
+                <li class=" navigation-header"><span>Announcements</span><i class="la la-ellipsis-h" data-toggle="tooltip" data-placement="right" data-original-title="Support"></i>
+                </li>
+                <li class=" nav-item"><a href="http://localhost:8060/downloads/" target="_blank"><i class="la la-download"></i><span class="menu-title" data-i18n="Raise Support">Downloads</span></a>
+                </li>
+
+
+
+
+
+
+            </ul>
+            </li>
+
+
+
+
+
+
+            </ul>
+        </div>
+    </div>
+
+    <!-- END: Main Menu-->
+
+    <!-- END: Main Menu-->
+
+    <!-- BEGIN: Content-->
+    <div class="app-content content">
+        <div class="content-overlay"></div>
+        <div class="content-wrapper">
+            <div class="content-header row">
+            </div>
+            <div class="content-body">
+                <div class="row">
+                    <div class="col-md-12">
+                                            </div>
+                </div>
+
+                <div class="row">
+    <div class="col-md-12">
+
+
+            </div>
+</div>
+
+<div class="row">
+    <div class="col-xl-3 col-lg-6 col-12">
+        <div class="card pull-up">
+            <div class="card-content">
+                <div class="card-body">
+                    <div class="media d-flex">
+                        <div class="media-body text-left">
+                            <h3 class="info">50,000</h3>
+                            <h6>Deposits</h6>
+                        </div>
+                        <div>
+                            <!-- <i class="icon-wallet info font-large-2 float-right"></i> -->
+                        </div>
+                    </div>
+                    <div class="progress progress-sm mt-1 mb-0 box-shadow-2">
+                        <div class="progress-bar bg-gradient-x-info" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-lg-6 col-12">
+        <div class="card pull-up">
+            <div class="card-content">
+                <div class="card-body">
+                    <div class="media d-flex">
+                        <div class="media-body text-left">
+                            <h3 class="warning">50,000</h3>
+                            <h6>Share Capital </h6>
+                        </div>
+
+                    </div>
+                    <div class="progress progress-sm mt-1 mb-0 box-shadow-2">
+                        <div class="progress-bar bg-gradient-x-danger" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-lg-6 col-12">
+        <div class="card pull-up">
+            <div class="card-content">
+                <div class="card-body">
+                    <div class="media d-flex">
+                        <div class="media-body text-left">
+                            <h3 class="success">50,000</h3>
+                            <h6>Outstanding Loans</h6>
+                        </div>
+
+                    </div>
+                    <div class="progress progress-sm mt-1 mb-0 box-shadow-2">
+                        <div class="progress-bar bg-gradient-x-info" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-lg-6 col-12">
+        <div class="card pull-up">
+            <div class="card-content">
+                <div class="card-body">
+                    <div class="media d-flex">
+                        <div class="media-body text-left">
+                            <h3 class="danger"> 50,000 </h3>
+                            <h6>Free Deposits</h6>
+                        </div>
+
+                    </div>
+                    <div class="progress progress-sm mt-1 mb-0 box-shadow-2">
+                        <div class="progress-bar bg-gradient-x-danger" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xl-3 col-lg-6 col-12">
+        <div class="card pull-up">
+            <div class="card-content">
+                <div class="card-body">
+                    <div class="media d-flex">
+                        <div class="media-body text-left">
+                            <h3 class="info">50,000</h3>
+                            <h6>Running Loans</h6>
+                        </div>
+                        <div>
+                            <!-- <i class="icon-wallet info font-large-2 float-right"></i> -->
+                        </div>
+                    </div>
+                    <div class="progress progress-sm mt-1 mb-0 box-shadow-2">
+                        <div class="progress-bar bg-gradient-x-info" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-lg-6 col-12">
+        <div class="card pull-up">
+            <div class="card-content">
+                <div class="card-body">
+                    <div class="media d-flex">
+                        <div class="media-body text-left">
+                            <h3 class="warning">50,000</h3>
+                            <h6>Qualified Self Guarantee </h6>
+                        </div>
+
+                    </div>
+                    <div class="progress progress-sm mt-1 mb-0 box-shadow-2">
+                        <div class="progress-bar bg-gradient-x-danger" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-lg-6 col-12">
+        <div class="card pull-up">
+            <div class="card-content">
+                <div class="card-body">
+                    <div class="media d-flex">
+                        <div class="media-body text-left">
+                            <h3 class="success"></h3>
+                            <h6>Investment Account</h6>
+                        </div>
+
+                    </div>
+                    <div class="progress progress-sm mt-1 mb-0 box-shadow-2">
+                        <div class="progress-bar bg-gradient-x-info" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-lg-6 col-12">
+        <div class="card pull-up">
+            <div class="card-content">
+                <div class="card-body">
+                    <div class="media d-flex">
+                        <div class="media-body text-left">
+                            <h3 class="danger">  </h3>
+                            <h6>SASA Account</h6>
+                        </div>
+
+                    </div>
+                    <div class="progress progress-sm mt-1 mb-0 box-shadow-2">
+                        <div class="progress-bar bg-gradient-x-danger" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--/ eCommerce statistic -->
+
+
+<!-- Donut Chart -->
+<div class="row">
+
+    <!-- Chart -->
+    <div class="col-12">
+        <div class="card box-shadow-0">
+            <div class="card-content">
+                <div class="row">
+                    <div class="col-md-9 col-12">
+                        <div class="">
+                            <div class="card">
+
+                                <div class="card-content collapse show draggable-container">
+                                    <div class="card-body">
+
+                                        <div class="jqueryui-ele-container">
+                                            <div class="tabs-default">
+                                                <ul>
+                                                    <li><a href="#tabs-default-1"><i class="ft-profile"></i> My Profile </a></li>
+                                                    <li><a href="#tabs-default-2"><i class="ft-group"></i> Next of Kin </a></li>
+                                                    <li><a href="#tabs-default-3"><i class="ft-image"></i> Accounts </a></li>
+                                                </ul>
+                                                <div id="tabs-default-1">
+                                                    <!-- User Profile Cards -->
+                                                    <section id="user-profile-cards" class="row mt-2">
+                                                        <!-- <div class="col-12">
+                                                            <h4 class="text-uppercase">User Profile Cards</h4>
+                                                            <p>User profile cards with border & shadow variant.</p>
+                                                        </div> -->
+                                                        <div class="col-xl-4 col-md-6 col-12">
+                                                            <div class="card">
+                                                                <div class="text-center">
+                                                                    <div class="card-body">
+                                                                        <img src="data:image/png;base64," class="rounded-circle" alt="No Image Found" style="height:150px;width:150px;">
+                                                                    </div>
+                                                                    <div class="card-body">
+                                                                        <h4 class="card-title">  </h4>
+                                                                        <h6 class="card-subtitle text-bold"> Member Number: 44</h6>
+                                                                    </div>
+
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="list-group list-group-flush">
+                                                                <a href="#" class="list-group-item"><span> <b>National ID :</b> </span> 23456987</a>
+                                                                <a href="#" class="list-group-item"><span> <b> Email Address : </b> </span> </a>
+                                                                <a href="#" class="list-group-item"><span> <b> Date of Birth : </b> </span> Monday 1st January 1753</a>
+                                                                <a href="#" class="list-group-item"><span> <b>Phone No :</b> </span> 0725800350</a>
+                                                                <a href="#" class="list-group-item"><span> <b>Payroll No :</b> </span> 000011</a>
+
+                                                            </div>
+                                                        </div>
+
+                                                    </section>
+                                                    <!--/ User Profile Cards -->
+                                                </div>
+                                                <div id="tabs-default-2">
+                                                    <div class="card-content collapse show">
+                                                                                                            </div>
+                                                </div>
+                                                <div id="tabs-default-3">
+                                                    <div class="col-md-12 col-12">
+                                                        <div class="card border-light shadow-sm">
+                                                            <div class="card-body">
+                                                                <h2 class="h5 mb-4">My Acccounts</h2>
+                                                                <div class="HiddenAccounts">
+                                                                                                                                                                                                                                                                                </div>
+
+
+                                                                <div class="table-responsive">
+                                                                    <table class="table" id="AccountsTable">
+                                                                        <thead class="thead-brown">
+                                                                            <tr>
+                                                                                <th class="border-0">Scheme</th>
+                                                                                <th class="border-0">Balance</th>
+                                                                                <!-- <th class="border-0">Account Status</th> -->
+                                                                                <th class="border-0">Action</th>
+
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <!-- Item -->
+                                                                                                                                                                                                                                        
+                                                                            <!-- End of Item -->
+
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-12">
+                        <div class="x_panel">
+                            <div class="x_title">
+                                <h2 class="dark-blue">Performance Summary </h2>
+                                <ul class="nav navbar-right panel_toolbox">
+                                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+
+                                    </li>
+                                    <li><a class=""><i class="fa fa-close"></i></a>
+                                    </li>
+                                </ul>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="x_content2">
+                                <div id="sessions-browser-donut-chart" style="width: 100%; height: 300px;">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Chart  -->
+
+</div>
+</div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <div id="yii-debug-toolbar" data-url="/debug/default/toolbar?tag=6334641c22e68" data-skip-urls="[]" style="display:none" class="yii-debug-toolbar-bottom"></div><style>#yii-debug-toolbar-logo{position:fixed;right:31px;bottom:4px}@media print{.yii-debug-toolbar{display:none !important}}.yii-debug-toolbar{font:11px Verdana, Arial, sans-serif;text-align:left;width:96px;transition:width .3s ease;z-index:1000000}.yii-debug-toolbar.yii-debug-toolbar_active:not(.yii-debug-toolbar_animating) .yii-debug-toolbar__bar{overflow:visible;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.yii-debug-toolbar.yii-debug-toolbar_iframe_active:not(.yii-debug-toolbar_animating) .yii-debug-toolbar__resize-handle{display:block;height:4px;cursor:ns-resize;margin-bottom:0;z-index:1000001;position:absolute;left:0;right:0}.yii-debug-toolbar:not(.yii-debug-toolbar_active) .yii-debug-toolbar__bar,.yii-debug-toolbar.yii-debug-toolbar_animating .yii-debug-toolbar__bar{height:40px}.yii-debug-toolbar_active{width:100%}.yii-debug-toolbar_active .yii-debug-toolbar__toggle-icon{-webkit-transform:rotate(0);transform:rotate(0)}.yii-debug-toolbar_position_top{margin:0 0 20px 0;width:100%}.yii-debug-toolbar_position_bottom{position:fixed;right:0;bottom:0;margin:0}.yii-debug-toolbar__bar{position:relative;padding:0;font:11px Verdana, Arial, sans-serif;text-align:left;overflow:hidden;box-sizing:content-box;display:flex;flex-wrap:wrap;background:#fff;background:-moz-linear-gradient(top, #fff 0%, #f7f7f7 100%);background:-webkit-linear-gradient(top, #fff 0%, #f7f7f7 100%);background:linear-gradient(to bottom, #fff 0%, #f7f7f7 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f7f7f7', GradientType=0);border:1px solid rgba(0,0,0,0.11);direction:ltr}.yii-debug-toolbar__bar::after{content:'';display:table;clear:both}.yii-debug-toolbar__view{height:0;overflow:hidden;background:white}.yii-debug-toolbar__view iframe{margin:0;padding:10px 0 0;height:100%;width:100%;border:0}.yii-debug-toolbar_iframe_active .yii-debug-toolbar__view{height:100%}.yii-debug-toolbar_iframe_active .yii-debug-toolbar__toggle-icon{-webkit-transform:rotate(90deg);transform:rotate(90deg)}.yii-debug-toolbar_iframe_active .yii-debug-toolbar__external{display:block}.yii-debug-toolbar_iframe_animating .yii-debug-toolbar__view{transition:height .3s ease}.yii-debug-toolbar__block{margin:0;border-right:1px solid rgba(0,0,0,0.11);border-bottom:1px solid rgba(0,0,0,0.11);padding:4px 8px;line-height:32px;white-space:nowrap}@media (max-width: 767.98px){.yii-debug-toolbar__block{flex-grow:1;text-align:center}}.yii-debug-toolbar__block a{display:inline-block;text-decoration:none;color:black}.yii-debug-toolbar__block img{vertical-align:middle;width:30px;height:30px}.yii-debug-toolbar__block_active,.yii-debug-toolbar__ajax:hover{background:#f7f7f7;background:-moz-linear-gradient(top, #f7f7f7 0%, #e0e0e0 100%);background:-webkit-linear-gradient(top, #f7f7f7 0%, #e0e0e0 100%);background:linear-gradient(to bottom, #f7f7f7 0%, #e0e0e0 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f7f7f7', endColorstr='#e0e0e0', GradientType=0)}.yii-debug-toolbar__label{display:inline-block;padding:2px 4px;font-size:12px;font-weight:normal;line-height:14px;white-space:nowrap;vertical-align:middle;max-width:100px;overflow-x:hidden;text-overflow:ellipsis;color:#ffffff;text-shadow:0 -1px 0 rgba(0,0,0,0.25);background-color:#737373;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px}.yii-debug-toolbar__label:empty{display:none}a.yii-debug-toolbar__label:hover,a.yii-debug-toolbar__label:focus{color:#ffffff;text-decoration:none;cursor:pointer}.yii-debug-toolbar__label_important,.yii-debug-toolbar__label_error{background-color:#b94a48}.yii-debug-toolbar__label_important[href]{background-color:#953b39}.yii-debug-toolbar__label_warning,.yii-debug-toolbar__badge_warning{background-color:#f89406}.yii-debug-toolbar__label_warning[href]{background-color:#c67605}.yii-debug-toolbar__label_success{background-color:#217822}.yii-debug-toolbar__label_success[href]{background-color:#356635}.yii-debug-toolbar__label_info{background-color:#0b72b8}.yii-debug-toolbar__label_info[href]{background-color:#2d6987}.yii-debug-toolbar__label_inverse,.yii-debug-toolbar__badge_inverse{background-color:#333333}.yii-debug-toolbar__label_inverse[href],.yii-debug-toolbar__badge_inverse[href]{background-color:#1a1a1a}.yii-debug-toolbar__title{background:#f7f7f7;background:-moz-linear-gradient(top, #f7f7f7 0%, #e0e0e0 100%);background:-webkit-linear-gradient(top, #f7f7f7 0%, #e0e0e0 100%);background:linear-gradient(to bottom, #f7f7f7 0%, #e0e0e0 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f7f7f7', endColorstr='#e0e0e0', GradientType=0)}.yii-debug-toolbar__block_last{width:80px;height:40px;float:left}.yii-debug-toolbar__toggle,.yii-debug-toolbar__external{cursor:pointer;position:absolute;width:30px;height:30px;font-size:25px;font-weight:100;line-height:28px;color:#ffffff;text-align:center;opacity:0.5;filter:alpha(opacity=50);transition:opacity .3s ease}.yii-debug-toolbar__toggle:hover,.yii-debug-toolbar__toggle:focus,.yii-debug-toolbar__external:hover,.yii-debug-toolbar__external:focus{color:#ffffff;text-decoration:none;opacity:0.9;filter:alpha(opacity=90)}.yii-debug-toolbar__toggle-icon,.yii-debug-toolbar__external-icon{display:inline-block;background-position:50% 50%;background-repeat:no-repeat}.yii-debug-toolbar__toggle{right:10px;bottom:4px}.yii-debug-toolbar__toggle-icon{padding:7px 0;width:10px;height:16px;background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNSIgaGVpZ2h0PSIxNSIgdmlld0JveD0iMCAwIDUwIDUwIj48cGF0aCBmaWxsPSIjNDQ0IiBkPSJNMTUuNTYzIDQwLjgzNmEuOTk3Ljk5NyAwIDAgMCAxLjQxNCAwbDE1LTE1YTEgMSAwIDAgMCAwLTEuNDE0bC0xNS0xNWExIDEgMCAwIDAtMS40MTQgMS40MTRMMjkuODU2IDI1LjEzIDE1LjU2MyAzOS40MmExIDEgMCAwIDAgMCAxLjQxNHoiLz48L3N2Zz4=");transition:-webkit-transform .3s ease-out;transition:transform .3s ease-out;-webkit-transform:rotate(180deg);transform:rotate(180deg)}.yii-debug-toolbar__external{display:none;right:50px;bottom:4px}.yii-debug-toolbar__external-icon{padding:8px 0;width:14px;height:14px;background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNSIgaGVpZ2h0PSIxNSIgdmlld0JveD0iMCAwIDUwIDUwIj48cGF0aCBmaWxsPSIjNDQ0IiBkPSJNMzkuNjQyIDkuNzIyYTEuMDEgMS4wMSAwIDAgMC0uMzgyLS4wNzdIMjguMTAzYTEgMSAwIDAgMCAwIDJoOC43NDNMMjEuNyAyNi43OWExIDEgMCAwIDAgMS40MTQgMS40MTVMMzguMjYgMTMuMDZ2OC43NDNhMSAxIDAgMCAwIDIgMFYxMC42NDZhMS4wMDUgMS4wMDUgMCAwIDAtLjYxOC0uOTI0eiIvPjxwYXRoIGQ9Ik0zOS4yNiAyNy45ODVhMSAxIDAgMCAwLTEgMXYxMC42NmgtMjh2LTI4aDEwLjY4M2ExIDEgMCAwIDAgMC0ySDkuMjZhMSAxIDAgMCAwLTEgMXYzMGExIDEgMCAwIDAgMSAxaDMwYTEgMSAwIDAgMCAxLTF2LTExLjY2YTEgMSAwIDAgMC0xLTF6Ii8+PC9zdmc+")}.yii-debug-toolbar__switch-icon{margin-left:10px;padding:5px 10px;width:18px;height:18px;background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxuczpzdmc9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDUwIDUwIiB2ZXJzaW9uPSIxLjEiPjxwYXRoIGQ9Im00MS4xIDIzYy0wLjYgMC0xIDAuNC0xIDF2MTAuN2wtMjUuNi0wLjFjMCAwIDAtMiAwLTIuOCAwLTAuOC0wLjctMS0xLTAuNmwtMy41IDMuNWMtMC42IDAuNi0wLjYgMS4zIDAgMmwzLjQgMy40YzAuNCAwLjQgMS4xIDAuMiAxLTAuNmwwLTIuOWMwIDAgMjAuOCAwLjEgMjYuNiAwIDAuNiAwIDEtMC40IDEtMXYtMTEuN2MwLTAuNi0wLjQtMS0xLTF6TTkgMjYuOSA5IDI2LjkgOSAyNi45IDkgMjYuOSIvPjxwYXRoIGQ9Im05IDI2LjljMC42IDAgMS0wLjQgMS0xdi0xMC43bDI1LjYgMC4xYzAgMCAwIDIgMCAyLjggMCAwLjggMC43IDEgMSAwLjZsMy41LTMuNWMwLjYtMC42IDAuNi0xLjMgMC0ybC0zLjQtMy40Yy0wLjQtMC40LTEuMS0wLjItMSAwLjZsMCAyLjljMCAwLTIwLjgtMC4xLTI2LjYgMC0wLjYgMC0xIDAuNC0xIDF2MTEuN2MwIDAuNiAwLjQgMSAxIDF6Ii8+PC9zdmc+")}.yii-debug-toolbar__ajax{position:relative}.yii-debug-toolbar__ajax:hover .yii-debug-toolbar__ajax_info,.yii-debug-toolbar__ajax:focus .yii-debug-toolbar__ajax_info{visibility:visible}.yii-debug-toolbar__ajax a{color:#337ab7}.yii-debug-toolbar__ajax table{width:100%;table-layout:auto;border-spacing:0;border-collapse:collapse}.yii-debug-toolbar__ajax table td{padding:4px;font-size:12px;line-height:normal;vertical-align:top;border-top:1px solid #ddd}.yii-debug-toolbar__ajax table th{padding:4px;font-size:11px;line-height:normal;vertical-align:bottom;border-bottom:2px solid #ddd}.yii-debug-toolbar__ajax_info{visibility:hidden;transition:visibility .2s linear;background-color:white;box-shadow:inset 0 -10px 10px -10px #e1e1e1;position:absolute;bottom:40px;left:-1px;padding:10px;max-width:480px;max-height:480px;word-wrap:break-word;overflow:hidden;overflow-y:auto;box-sizing:border-box;border:1px solid rgba(0,0,0,0.11);z-index:1000001}.yii-debug-toolbar__ajax_request_status{color:white;padding:2px 5px}.yii-debug-toolbar__ajax_request_url{max-width:170px;overflow:hidden;text-overflow:ellipsis}
+</style><script>(function () {
+    'use strict';
+
+    var findToolbar = function () {
+            return document.querySelector('#yii-debug-toolbar');
+        },
+        ajax = function (url, settings) {
+            var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+            settings = settings || {};
+            xhr.open(settings.method || 'GET', url, true);
+            xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+            xhr.setRequestHeader('Accept', 'text/html');
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200 && settings.success) {
+                        settings.success(xhr);
+                    } else if (xhr.status !== 200 && settings.error) {
+                        settings.error(xhr);
+                    }
+                }
+            };
+            xhr.send(settings.data || '');
+        },
+        url,
+        div,
+        toolbarEl = findToolbar(),
+        toolbarAnimatingClass = 'yii-debug-toolbar_animating',
+        barSelector = '.yii-debug-toolbar__bar',
+        viewSelector = '.yii-debug-toolbar__view',
+        blockSelector = '.yii-debug-toolbar__block',
+        toggleSelector = '.yii-debug-toolbar__toggle',
+        externalSelector = '.yii-debug-toolbar__external',
+
+        CACHE_KEY = 'yii-debug-toolbar',
+        ACTIVE_STATE = 'active',
+
+        animationTime = 300,
+
+        activeClass = 'yii-debug-toolbar_active',
+        iframeActiveClass = 'yii-debug-toolbar_iframe_active',
+        iframeAnimatingClass = 'yii-debug-toolbar_iframe_animating',
+        titleClass = 'yii-debug-toolbar__title',
+        blockClass = 'yii-debug-toolbar__block',
+        ignoreClickClass = 'yii-debug-toolbar__ignore_click',
+        blockActiveClass = 'yii-debug-toolbar__block_active',
+        requestStack = [];
+
+    if (toolbarEl) {
+        url = toolbarEl.getAttribute('data-url');
+
+        ajax(url, {
+            success: function (xhr) {
+                div = document.createElement('div');
+                div.innerHTML = xhr.responseText;
+
+                toolbarEl.parentNode && toolbarEl.parentNode.replaceChild(div, toolbarEl);
+
+                showToolbar(findToolbar());
+
+                var event;
+                if (typeof(Event) === 'function') {
+                    event = new Event('yii.debug.toolbar_attached', {'bubbles': true});
+                } else {
+                    event = document.createEvent('Event');
+                    event.initEvent('yii.debug.toolbar_attached', true, true);
+                }
+
+                div.dispatchEvent(event);
+            },
+            error: function (xhr) {
+                toolbarEl.innerText = xhr.responseText;
+            }
+        });
+    }
+
+    function showToolbar(toolbarEl) {
+        var barEl = toolbarEl.querySelector(barSelector),
+            viewEl = toolbarEl.querySelector(viewSelector),
+            toggleEl = toolbarEl.querySelector(toggleSelector),
+            externalEl = toolbarEl.querySelector(externalSelector),
+            blockEls = barEl.querySelectorAll(blockSelector),
+            blockLinksEls = document.querySelectorAll(blockSelector + ':not(.' + titleClass + ') a'),
+            iframeEl = viewEl.querySelector('iframe'),
+            iframeHeight = function () {
+                return (window.innerHeight * (toolbarEl.dataset.height / 100) - barEl.clientHeight) + 'px';
+            },
+            isIframeActive = function () {
+                return toolbarEl.classList.contains(iframeActiveClass);
+            },
+            resizeIframe = function(mouse) {
+                var availableHeight = window.innerHeight - barEl.clientHeight;
+                viewEl.style.height = Math.min(availableHeight, availableHeight - mouse.y) + "px";
+            },
+            showIframe = function (href) {
+                toolbarEl.classList.add(iframeAnimatingClass);
+                toolbarEl.classList.add(iframeActiveClass);
+
+                iframeEl.src = externalEl.href = href;
+                iframeEl.removeAttribute('tabindex');
+
+                viewEl.style.height = iframeHeight();
+                setTimeout(function () {
+                    toolbarEl.classList.remove(iframeAnimatingClass);
+                }, animationTime);
+            },
+            hideIframe = function () {
+                toolbarEl.classList.add(iframeAnimatingClass);
+                toolbarEl.classList.remove(iframeActiveClass);
+                iframeEl.setAttribute("tabindex", "-1");
+                removeActiveBlocksCls();
+
+                externalEl.href = '#';
+                viewEl.style.height = '';
+                setTimeout(function () {
+                    toolbarEl.classList.remove(iframeAnimatingClass);
+                }, animationTime);
+            },
+            removeActiveBlocksCls = function () {
+                [].forEach.call(blockEls, function (el) {
+                    el.classList.remove(blockActiveClass);
+                });
+            },
+            toggleToolbarClass = function (className) {
+                toolbarEl.classList.add(toolbarAnimatingClass);
+                if (toolbarEl.classList.contains(className)) {
+                    toolbarEl.classList.remove(className);
+                    [].forEach.call(blockLinksEls, function (el) {
+                        el.setAttribute('tabindex', "-1");
+                    });
+                } else {
+                    [].forEach.call(blockLinksEls, function (el) {
+                        el.removeAttribute('tabindex');
+                    });
+                    toolbarEl.classList.add(className);
+                }
+                setTimeout(function () {
+                    toolbarEl.classList.remove(toolbarAnimatingClass);
+                }, animationTime);
+            },
+            toggleStorageState = function (key, value) {
+                if (window.localStorage) {
+                    var item = localStorage.getItem(key);
+
+                    if (item) {
+                        localStorage.removeItem(key);
+                    } else {
+                        localStorage.setItem(key, value);
+                    }
+                }
+            },
+            restoreStorageState = function (key) {
+                if (window.localStorage) {
+                    return localStorage.getItem(key);
+                }
+            },
+            togglePosition = function () {
+                if (isIframeActive()) {
+                    hideIframe();
+                } else {
+                    toggleToolbarClass(activeClass);
+                    toggleStorageState(CACHE_KEY, ACTIVE_STATE);
+                }
+            };
+
+        if (restoreStorageState(CACHE_KEY) === ACTIVE_STATE) {
+            var transition = toolbarEl.style.transition;
+            toolbarEl.style.transition = 'none';
+            toolbarEl.classList.add(activeClass);
+            setTimeout(function () {
+                toolbarEl.style.transition = transition;
+            }, animationTime);
+        } else {
+            [].forEach.call(blockLinksEls, function (el) {
+                el.setAttribute('tabindex', "-1");
+            });
+        }
+
+        toolbarEl.style.display = 'block';
+
+        window.onresize = function () {
+            if (toolbarEl.classList.contains(iframeActiveClass)) {
+                viewEl.style.height = iframeHeight();
+            }
+        };
+
+        toolbarEl.addEventListener("mousedown", function(e) {
+            if (isIframeActive() && (e.y - toolbarEl.offsetTop < 4 /* 4px click zone */)) {
+                document.addEventListener("mousemove", resizeIframe, false);
+            }
+        }, false);
+
+        document.addEventListener("mouseup", function(){
+            if (isIframeActive()) {
+                document.removeEventListener("mousemove", resizeIframe, false);
+            }
+        }, false);
+
+        barEl.onclick = function (e) {
+            var target = e.target,
+                block = findAncestor(target, blockClass);
+
+            if (block
+                && !block.classList.contains(titleClass)
+                && !block.classList.contains(ignoreClickClass)
+                && e.which !== 2 && !e.ctrlKey // not mouse wheel and not ctrl+click
+            ) {
+                while (target !== this) {
+                    if (target.href) {
+                        removeActiveBlocksCls();
+                        block.classList.add(blockActiveClass);
+                        showIframe(target.href);
+                    }
+                    target = target.parentNode;
+                }
+
+                e.preventDefault();
+            }
+        };
+
+        toggleEl.onclick = togglePosition;
+    }
+
+    function findAncestor(el, cls) {
+        while ((el = el.parentElement) && !el.classList.contains(cls)) ;
+        return el;
+    }
+
+    function renderAjaxRequests() {
+        var requestCounter = document.getElementsByClassName('yii-debug-toolbar__ajax_counter');
+        if (!requestCounter.length) {
+            return;
+        }
+        var ajaxToolbarPanel = document.querySelector('.yii-debug-toolbar__ajax');
+        var tbodies = document.getElementsByClassName('yii-debug-toolbar__ajax_requests');
+        var state = 'ok';
+        if (tbodies.length) {
+            var tbody = tbodies[0];
+            var rows = document.createDocumentFragment();
+            if (requestStack.length) {
+                var firstItem = requestStack.length > 20 ? requestStack.length - 20 : 0;
+                for (var i = firstItem; i < requestStack.length; i++) {
+                    var request = requestStack[i];
+                    var row = document.createElement('tr');
+                    rows.appendChild(row);
+
+                    var methodCell = document.createElement('td');
+                    methodCell.innerHTML = request.method;
+                    row.appendChild(methodCell);
+
+                    var statusCodeCell = document.createElement('td');
+                    var statusCode = document.createElement('span');
+                    if (request.statusCode < 300) {
+                        statusCode.setAttribute('class', 'yii-debug-toolbar__ajax_request_status yii-debug-toolbar__label_success');
+                    } else if (request.statusCode < 400) {
+                        statusCode.setAttribute('class', 'yii-debug-toolbar__ajax_request_status yii-debug-toolbar__label_warning');
+                    } else {
+                        statusCode.setAttribute('class', 'yii-debug-toolbar__ajax_request_status yii-debug-toolbar__label_error');
+                    }
+                    statusCode.textContent = request.statusCode || '-';
+                    statusCodeCell.appendChild(statusCode);
+                    row.appendChild(statusCodeCell);
+
+                    var pathCell = document.createElement('td');
+                    pathCell.className = 'yii-debug-toolbar__ajax_request_url';
+                    pathCell.innerHTML = request.url;
+                    pathCell.setAttribute('title', request.url);
+                    row.appendChild(pathCell);
+
+                    var durationCell = document.createElement('td');
+                    durationCell.className = 'yii-debug-toolbar__ajax_request_duration';
+                    if (request.duration) {
+                        durationCell.innerText = request.duration + " ms";
+                    } else {
+                        durationCell.innerText = '-';
+                    }
+                    row.appendChild(durationCell);
+                    row.appendChild(document.createTextNode(' '));
+
+                    var profilerCell = document.createElement('td');
+                    if (request.profilerUrl) {
+                        var profilerLink = document.createElement('a');
+                        profilerLink.setAttribute('href', request.profilerUrl);
+                        profilerLink.innerText = request.profile;
+                        profilerCell.appendChild(profilerLink);
+                    } else {
+                        profilerCell.innerText = 'n/a';
+                    }
+                    row.appendChild(profilerCell);
+
+                    if (request.error) {
+                        if (state !== "loading" && i > requestStack.length - 4) {
+                            state = 'error';
+                        }
+                    } else if (request.loading) {
+                        state = 'loading'
+                    }
+                    row.className = 'yii-debug-toolbar__ajax_request';
+                }
+                while (tbody.firstChild) {
+                    tbody.removeChild(tbody.firstChild);
+                }
+                tbody.appendChild(rows);
+            }
+            ajaxToolbarPanel.style.display = 'block';
+        }
+        requestCounter[0].innerText = requestStack.length;
+        var className = 'yii-debug-toolbar__label yii-debug-toolbar__ajax_counter';
+        if (state === 'ok') {
+            className += ' yii-debug-toolbar__label_success';
+        } else if (state === 'error') {
+            className += ' yii-debug-toolbar__label_error';
+        }
+        requestCounter[0].className = className;
+    }
+
+    /**
+     * Should AJAX request to be logged in debug panel
+     *
+     * @param requestUrl
+     * @returns {boolean}
+     */
+    function shouldTrackRequest(requestUrl) {
+        var a = document.createElement('a');
+        a.href = requestUrl;
+        var skipAjaxRequestUrls = JSON.parse(toolbarEl.getAttribute('data-skip-urls'));
+        if (Array.isArray(skipAjaxRequestUrls) && skipAjaxRequestUrls.length && skipAjaxRequestUrls.includes(requestUrl)) {
+            return false;
+        }
+        return a.host === location.host;
+    }
+
+    var proxied = XMLHttpRequest.prototype.open;
+
+    XMLHttpRequest.prototype.open = function (method, url, async, user, pass) {
+        var self = this;
+
+        if (shouldTrackRequest(url)) {
+            var stackElement = {
+                loading: true,
+                error: false,
+                url: url,
+                method: method,
+                start: new Date()
+            };
+            requestStack.push(stackElement);
+            this.addEventListener('readystatechange', function () {
+                if (self.readyState === 4) {
+                    stackElement.duration = self.getResponseHeader('X-Debug-Duration') || new Date() - stackElement.start;
+                    stackElement.loading = false;
+                    stackElement.statusCode = self.status;
+                    stackElement.error = self.status < 200 || self.status >= 400;
+                    stackElement.profile = self.getResponseHeader('X-Debug-Tag');
+                    stackElement.profilerUrl = self.getResponseHeader('X-Debug-Link');
+                    renderAjaxRequests();
+                }
+            }, false);
+            renderAjaxRequests();
+        }
+        proxied.apply(this, Array.prototype.slice.call(arguments));
+    };
+
+    // catch fetch AJAX requests
+    if (window.fetch) {
+        var originalFetch = window.fetch;
+
+        window.fetch = function (input, init) {
+            var method;
+            var url;
+            if (typeof input === 'string') {
+                method = (init && init.method) || 'GET';
+                url = input;
+            } else if (window.URL && input instanceof URL) { // fix https://github.com/yiisoft/yii2-debug/issues/296
+                method = (init && init.method) || 'GET';
+                url = input.href;
+            } else if (window.Request && input instanceof Request) {
+                method = input.method;
+                url = input.url;
+            }
+            var promise = originalFetch(input, init);
+
+            if (shouldTrackRequest(url)) {
+                var stackElement = {
+                    loading: true,
+                    error: false,
+                    url: url,
+                    method: method,
+                    start: new Date()
+                };
+                requestStack.push(stackElement);
+                promise.then(function (response) {
+                    stackElement.duration = response.headers.get('X-Debug-Duration') || new Date() - stackElement.start;
+                    stackElement.loading = false;
+                    stackElement.statusCode = response.status;
+                    stackElement.error = response.status < 200 || response.status >= 400;
+                    stackElement.profile = response.headers.get('X-Debug-Tag');
+                    stackElement.profilerUrl = response.headers.get('X-Debug-Link');
+                    renderAjaxRequests();
+
+                    return response;
+                }).catch(function (error) {
+                    stackElement.loading = false;
+                    stackElement.error = true;
+                    renderAjaxRequests();
+
+                    throw error;
+                });
+                renderAjaxRequests();
+            }
+
+            return promise;
+        };
+    }
+
+})();
+</script><script src="/assets/97471089/jquery.js"></script>
+<script src="/app-assets/vendors/js/vendors.min.js"></script>
+<script src="/app-assets/vendors/js/charts/chart.min.js"></script>
+<script src="/app-assets/vendors/js/charts/raphael-min.js"></script>
+<script src="/app-assets/vendors/js/charts/morris.min.js"></script>
+<script src="/app-assets/vendors/js/charts/jvector/jquery-jvectormap-2.0.3.min.js"></script>
+<script src="/app-assets/vendors/js/charts/jvector/jquery-jvectormap-world-mill.js"></script>
+<script src="/app-assets/data/jvector/visitor-data.js"></script>
+<script src="/app-assets/js/core/libraries/jquery_ui/jquery-ui.min.js"></script>
+<script src="/app-assets/js/scripts/ui/jquery-ui/navigations.js"></script>
+<script src="/app-assets/vendors/js/tables/datatable/datatables.min.js"></script>
+<script src="/app-assets/vendors/js/tables/datatable/dataTables.responsive.min.js"></script>
+<script src="/app-assets/vendors/js/tables/buttons.colVis.min.js"></script>
+<script src="/app-assets/vendors/js/tables/datatable/dataTables.colReorder.min.js"></script>
+<script src="/app-assets/vendors/js/tables/datatable/dataTables.buttons.min.js"></script>
+<script src="/app-assets/vendors/js/tables/datatable/buttons.bootstrap4.min.js"></script>
+<script src="/app-assets/vendors/js/tables/datatable/dataTables.fixedHeader.min.js"></script>
+<script src="/app-assets/js/core/app-menu.js"></script>
+<script src="/app-assets/js/core/app.js"></script>
+<script src="/app-assets/js/scripts/pages/dashboard-sales.js"></script>
+<script src="/app-assets/js/scripts/tables/datatables-extensions/datatable-responsive.js"></script>
+<script src="/app-assets/js/scripts/extensions/image-cropper.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script>jQuery(function ($) {
+       
+});</script>
+</body>
+<div class="sidenav-overlay"></div>
+<div class="drag-target"></div>
+
+<!-- BEGIN: Footer-->
+<!-- <footer class="footer footer-transparent footer-light navbar-shadow">
+        <p class="clearfix blue-grey lighten-2 text-sm-center mb-0 px-2 container center-layout"><span class="float-md-left d-block d-md-inline-block">Copyright &copy; 2019 <a class="text-bold-800 grey darken-2" href="https://ushurusacco.com" target="_blank">Ushuru SACCO</a></span><span class="float-md-right d-none d-lg-block">Powered By Iansoft Technologies<i class="ft-heart pink"></i><span id="scroll-top"></span></span></p>
+    </footer> -->
+<!-- END: Footer-->
+<script>
+    $(function() {
+        console.log('hapa')
+        var absolute = $('input[name=absolute]').val();
+        //Add an experience
+        $('.createWithdraw').on('click', function(e) {
+            e.preventDefault();
+            var url = $(this).attr('href');
+            console.log('clicking...');
+            $('.modal').modal('show')
+                .find('.modal-body')
+                .load(url);
+
+        });
+
+        /*Handle dismissal eveent of modal */
+        $('.modal').on('hidden.bs.modal', function() {
+            var reld = location.reload(true);
+            setTimeout(reld, 1000);
+        });
+    });
+</script>
+
+</html>

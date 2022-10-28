@@ -1,0 +1,128 @@
+$turquoise: #1abc9c;
+$green-sea: #16a085;
+
+$emerald: #2ecc71;
+$nephritis: #27ae60;
+
+$peter-river: #3498db;
+$belize-hole: #2980b9;
+
+$amethyst: #9b59b6;
+$wisteria: #8e44ad;
+
+$wet-asphalt: #34495e;
+$midnight-blue: #2c3e50;
+
+$sunflower: #f1c40f;
+$orange: #f39c12;
+
+$carrot: #e67e22;
+$pumpkin: #d35400;
+
+$alizarin: #e74c3c;
+$pomegranate: #c0392b;
+
+$clouds: #ecf0f1;
+$silver: #bdc3c7;
+
+$concrete: #95a5a6;
+$asbestos: #7f8c8d;
+
+.c-progress-steps {
+	margin: 0;
+	list-style-type: none;
+	font-family: Lato;
+	
+		$done-color: $emerald;
+		$current-color: $peter-river;
+		$progress-color: $asbestos;
+		
+	
+		li {
+			position: relative;
+			font-size: 14px;
+			color: $progress-color;
+			padding: 2px 0 2px 23px;
+				
+				a {
+					color: inherit;
+				}
+				
+				&.done {
+					color: $done-color;
+				
+					&:before {
+						color: $done-color;
+						content: "\f058";
+					}
+				}
+				
+				&.current {
+					color: $current-color;
+					font-weight: bold;
+					
+					&:before {
+						color: $current-color;
+						content: "\f192";
+					}
+				}
+				
+				&:before {
+					position: absolute;
+					left: 0;
+					font: normal normal normal 14px/1 FontAwesome;
+					font-size: 22px;
+					background-color: #fff;
+					content: "\f10c";
+					
+					@media all and (max-width: 600px) {
+						top: calc(50% - 8px);
+						font-size: 16px;
+					}
+				}
+		}
+		
+	@media all and (min-width: 600px)  {
+		display: table;
+		list-style-type: none;
+		margin: 20px auto;
+		padding: 0;
+		table-layout: fixed;
+		width: 100%;
+		
+		li {
+			display: table-cell;
+			text-align: center;
+			padding: 0;
+			padding-bottom: 10px;
+			white-space: nowrap;
+			position: relative;
+			border-left-width: 0;
+			border-bottom-width: 4px;
+			border-bottom-style: solid;
+			border-bottom-color: $progress-color;
+				
+				&.done {
+					border-bottom-color: $done-color;
+				}
+				
+				&.current {
+					color: $current-color;
+					font-size: 16px;
+					line-height: 14px;
+					border-bottom-color: $current-color;
+					
+					&:before {
+						color: $current-color;
+						content: "\f192";
+					}
+				}
+				
+				&:before {
+					bottom: -14px;
+					left: 50%;
+					margin-left: -9px;
+				}
+		}
+	}
+}
